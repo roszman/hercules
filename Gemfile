@@ -31,7 +31,6 @@ gem 'spring', '1.1.3',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-gem 'unicorn', '4.8.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -42,4 +41,5 @@ gem 'unicorn', '4.8.3'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'unicorn', '4.8.3'
 end
