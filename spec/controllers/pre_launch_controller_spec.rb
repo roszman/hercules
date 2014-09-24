@@ -12,8 +12,8 @@ RSpec.describe PreLaunchController, :type => :controller do
   describe "POST subscribe" do
     it "saving user with email" do
       user = build(:user)
-      User.should_receive(:create).
-                 with({email: user.email}.with_indifferent_access)
+      expect(User).to receive(:create)
+                            .with({email: user.etmail})
       post :subscribe, user: {email: user.email}
       #expect{}.to change(User, :count)
     end

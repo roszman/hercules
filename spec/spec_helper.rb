@@ -20,6 +20,14 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
      ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
+  config.full_backtrace=false
+  config.backtrace_exclusion_patterns = [
+        /\/lib\d*\/ruby\//,
+            /bin\//,
+                /gems/,
+                    /spec\/spec_helper\.rb/,
+                        /lib\/rspec\/(core|expectations|matchers|mocks)/
+                          ]
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
