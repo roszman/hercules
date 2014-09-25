@@ -19,5 +19,11 @@ module Hercules
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    console do
+      # this block is called only when running console,
+      # so we can safely require pry here
+      require 'pry'
+      config.console = Pry
+    end
   end
 end
