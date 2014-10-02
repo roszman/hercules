@@ -1,37 +1,57 @@
 require 'rails_helper'
 
-describe "Pre-launch page" do 
+describe "PreLaunch" do 
   
-  describe "Index page" do
+  describe "#index" do
+
+    before :each do
+      visit pre_launch_path 
+    end
 
     it "should have the content 'evosano'" do
-      visit '/pre_launch/' 
       expect(page).to have_content('evosano')
     end
 
     it "should have the main message content" do
-      visit '/pre_launch'
       expect(page).to have_content('Twój prywatny trener online. Darmowy, na zawsze.')
     end
+    
     it "should have the features content" do
-      visit '/pre_launch'
       expect(page).to have_content('Plany treningowe')
-     expect(page).to have_content('Baza ćwiczeń'), '4.0.0'
+      expect(page).to have_content('Baza ćwiczeń')
       expect(page).to have_content('Analiza postępów')
     end
-    it "should have the pre call to action content" do
-      visit '/pre_launch'
+    
+    it "should have intriguing question ;)" do
       expect(page).to have_content('Chcesz wiedzieć kiedy startujemy?')
     end
-  it "should have field for email" do
-    visit 'pre_launch'
-    expect(page).to have_selector('input[type=email]')
-  end
 
-  it "should have button for posting email" do
-    visit 'pre_launch'
-    expect(page).to have_selector('button[type=submit]', :text => "Zapisz się")
-  end
+    it "should have field for user email" do
+      expect(page).to have_selector('input[type=email]#email')
+    end
 
+    it "should have button to subscribe" do
+      expect(page).to have_selector("input[type=submit][value='Zapisz się']")
+    end
+
+    it 'should have facebook share button' do
+      expect(page).to have_content 'Udostępnij'
+    end
+
+    it 'should have tweeter tweet button' do
+      expect(page).to have_content 'Tweet'
+    end
+
+    it 'should have contact button' do
+      expect(page).to have_content 'Kontakt'
+    end
+
+    it 'should have spam policy info' do
+      expect(page).to have_content 'Zero spamu, tylko konkretne informacje na temat startu naszej usługi.'
+    end
+
+    it 'should not have debugger output' do
+      expect(page).not_to have_selector 'pre.debug_dump'
+    end
   end
 end

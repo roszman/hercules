@@ -1,0 +1,7 @@
+- dodać like i share buttony dla facebooka
+- doddać tweety
+- dodać formularz kontaktowy
+- zrobić konto na fejsie dla dev.evosano.com i evosano.com
+- zrobić konto na tweeterze dla dev.evosano.com i evosano.com
+- może pinterest i inne?
+- partiale dla facebooka i tweetera

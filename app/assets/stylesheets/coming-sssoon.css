@@ -767,6 +767,9 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
     font-size: 18px;
     margin-bottom: 30px;
 }
+.subscribe {
+  margin-top:50px;
+}
 #video_background {
     position: fixed;
     top: 0px;
@@ -941,4 +944,7 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
         display: none;
     }
 
+}
+.clear{
+  clear: both;
 }

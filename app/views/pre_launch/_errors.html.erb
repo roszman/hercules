@@ -1,0 +1,9 @@
+<% unless flash[:errors].blank?  %>
+  <div class='alert alert-danger' role='alert'>
+    <ul>
+    <% flash[:errors].each do |key, message| %>
+      <%= content_tag :li, message , id: key %>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
