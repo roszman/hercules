@@ -10,7 +10,7 @@ require 'active_support/core_ext'
 #                          installed the spring binstubs per the docs)
 #  * zeus: 'zeus rspec' (requires the server to be started separetly)
 #  * 'just' rspec: 'rspec'
-guard :rspec, cmd: "bundle exec rspec --drb", all_after_pass: false  do
+guard :rspec, cmd: "bundle exec rspec --drb --format documentation", all_after_pass: false  do
   watch('spec/spec_helper.rb')                        { "spec" }
   watch('config/routes.rb')                           { "spec/routing" }
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
