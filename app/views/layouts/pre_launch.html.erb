@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <%= stylesheet_link_tag    'application', media: 'all'  %>
+    <%= javascript_include_tag 'application' %>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <title>evosano</title>
@@ -34,7 +35,7 @@
      var fb_share = function(){
        FB.ui({
          method: 'share',
-         href: 'http://def.cwiczeniaonline.pl:3000/pre_lauch', //TODO różne url dla różnych środowisk
+         href: 'http://<%= request.host %>/pre_lauch', //TODO różne url dla różnych środowisk
        }, function(response){});
      }
   </script>
@@ -51,7 +52,7 @@
                 </a>
             </li>
              <li>
-                <a href="https://twitter.com/share"> 
+             <a class='tweet' title='Twój prywatny trener online. Darmowy, na zawsze.' href="http://<%= request.host %>"> 
                     <i class="fa fa-twitter"></i>
                     Tweet
                 </a>
@@ -98,7 +99,9 @@
       <%= debug flash %>
     <% end %>
  </div>
-
+ <script>
+   socialMedia.setTwitterButton();
+  </script>
  </body>
 
 </html>
