@@ -35,7 +35,7 @@
      var fb_share = function(){
        FB.ui({
          method: 'share',
-         href: 'http://<%= request.host %>/pre_lauch', //TODO różne url dla różnych środowisk
+         href: 'http://<%= request.host %>', //TODO różne url dla różnych środowisk
        }, function(response){});
      }
   </script>
