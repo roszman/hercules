@@ -7,7 +7,7 @@ class PreLaunchController < ApplicationController
       user = User.create(subscription_params)
       if user.valid?
         #TODO stringi do słowników - ror guides I18n
-        flash.now[:success] = 'Twój email został dodany!'
+        flash.now[:success] = 'Dziękujemy! Niedługo poznasz więcej szczegółów!'
       else
           #TODO słowniki
           flash.now[:errors] = user.errors 

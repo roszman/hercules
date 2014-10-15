@@ -31,7 +31,7 @@ describe "PreLaunch" do
     end
 
     it "should have button to subscribe" do
-      expect(page).to have_selector("input[type=submit][value='Zapisz się']")
+      expect(page).to have_selector("input[type=submit][value='Chcę!']")
     end
 
     it 'should have facebook share button' do
