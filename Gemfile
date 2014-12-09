@@ -28,6 +28,7 @@ gem 'figaro', '1.0.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'gibbon', git: 'git://github.com/amro/gibbon.git'
 # Use unicorn as the app server
 
 # Use Capistrano for deployment
