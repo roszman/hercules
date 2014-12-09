@@ -26,7 +26,7 @@ RSpec.describe PreLaunchController, :type => :controller do
       end
 
       it "it should setup flash success message" do
-        expect(flash[:success]).to eq 'Dziękujemy! Niedługo poznasz więcej szczegółów!'
+        expect(flash[:success]).to eq 'Dziękujemy :)<br/>Niedługo poznasz więcej szczegółów!'
       end
 
       it 'it should render action :subscribe' do
