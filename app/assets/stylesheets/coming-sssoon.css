@@ -954,3 +954,6 @@ h1 small, h2 small, h3 small, h1 .small, h2 .small, h3 .small {
 .contact-us {
   float: left;
 }
+.iwant {
+  width: 100px !important
+  }

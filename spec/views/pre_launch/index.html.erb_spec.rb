@@ -43,7 +43,7 @@ describe "PreLaunch" do
     end
 
     it 'should have contact button' do
-      expect(page).to have_content 'Kontakt'
+      expect(page).to have_content 'info@evosano.com'
     end
 
     it 'should have spam policy info' do
