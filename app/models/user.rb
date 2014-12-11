@@ -13,16 +13,21 @@ class User < ActiveRecord::Base
     return true if(Rails.env.test? && !testing) 
     list_id = ENV['MAILCHIMP_LIST_ID']
 
+    begin
     response = Rails.configuration.mailchimp.lists.subscribe({
       id: list_id,
       email: {email: email},
       double_optin: false
     })
+    rescue Gibbon::MailChimpError => e
+      logger.tagged( "MAILCHIMP" ){ logger.error { "Error while subscribing user to Mailchimp: messge: #{e.message}, code #{e.code}"} }
+    end
     response
   end
 
   def user_not_exists?
-    !User.exists?(email: email.downcase)
+    answer = !User.exists?(email: email.downcase)
+    if(!answer) logger.tagged('MAILCHIMP'){logger.warn {"User is subsribed on list but not in database. email: #{user.email}"
   end
 
   def email_downcase!

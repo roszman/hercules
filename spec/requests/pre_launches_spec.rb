@@ -17,7 +17,7 @@ feature "Subsribing to newsletter" do
     end
 
    scenario "he should see confirmation message" do
-      expect(page).to have_content 'Dziękujemy! Niedługo poznasz więcej szczegółów!'
+      expect(page).to have_content 'Dziękujemy :)Niedługo poznasz więcej szczegółów!'
     end
 
    scenario 'he should not see email field' do
@@ -45,13 +45,13 @@ feature "Subsribing to newsletter" do
   end
 
   context 'when someone use existing email' do
-   scenario 'he should see information about existing email' do
+   scenario 'he should see thank you message' do
       fill_in 'email', with: user.email
       click_button subscribe_button_text
       visit '/pre_launch'
       fill_in 'email', with: user.email
       click_button subscribe_button_text
-      expect(page).to have_content 'Mamy już Twój email.'
+      expect(page).to have_content 'Dziękujemy :)Niedługo poznasz więcej szczegółów!'
     end
   end
 

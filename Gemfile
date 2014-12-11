@@ -31,6 +31,7 @@ gem 'figaro', '1.0.0'
 gem 'gibbon', git: 'git://github.com/amro/gibbon.git'
 # Use unicorn as the app server
 
+gem 'log4r', '1.1.10'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -50,6 +51,7 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '1.3.9'
   gem 'spring', '1.1.3'
+  gem 'pry-byebug'
 end
 
 group :production do
