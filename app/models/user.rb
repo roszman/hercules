@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
       rescue Gibbon::MailChimpError => e
         logger.tagged( "MAILCHIMP" ){ logger.error { "Error while subscribing user to Mailchimp: messge: #{e.message}, code #{e.code}"} }
       end
+    logger.tagged("MAILCHIMP"){logger.info{ "User subscribed to list #{email}"}}
     response
   end
 
